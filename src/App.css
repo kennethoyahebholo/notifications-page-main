@@ -1,0 +1,12 @@
+@font-face{
+  font-family: 'ken';
+  src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+
+
+.App {
+  font-family: 'ken', sans-serif;
+  background: hsl(210, 60%, 98%);
+  height: 100%;
+}
+
