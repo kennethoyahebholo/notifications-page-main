@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Index = ({ readNot, setNotificationDetails }) => {
+  const [ isAllRead, setIsAllRead ] = useState(false)
 
   const handleIsRead = (id) => {
-    setNotificationDetails((prev)=> {
+    if(isAllRead){
+      setIsAllRead(false)
+      setNotificationDetails((prev)=> {
       return prev.map(item => {
           return {...item, read:true}
       })
     })
+    }else{
+      setIsAllRead(true)
+      setNotificationDetails((prev)=> {
+      return prev.map(item => {
+          return {...item, read:false}
+      })
+    })
+    }    
   }
 
   return (
@@ -18,7 +29,11 @@ const Index = ({ readNot, setNotificationDetails }) => {
         {readNot.length}
       </span>
      </div>
+     {isAllRead?
+     <small onClick={handleIsRead} className='text-gray-500 font-semibold text-[15px] cursor-pointer hover:text-blue-900'>Mark all as unread</small>
+     :
      <small onClick={handleIsRead} className='text-gray-500 font-semibold text-[15px] cursor-pointer hover:text-blue-900'>Mark all as read</small>
+     }
     </div>
   )
 }
