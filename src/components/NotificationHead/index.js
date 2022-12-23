@@ -29,7 +29,7 @@ const Index = ({ readNot, setNotificationDetails }) => {
         {readNot.length}
       </span>
      </div>
-     {isAllRead?
+     {!isAllRead?
      <small onClick={handleIsRead} className='text-gray-500 font-semibold text-[15px] cursor-pointer hover:text-blue-900'>Mark all as unread</small>
      :
      <small onClick={handleIsRead} className='text-gray-500 font-semibold text-[15px] cursor-pointer hover:text-blue-900'>Mark all as read</small>
