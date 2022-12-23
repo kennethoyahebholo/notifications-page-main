@@ -8,14 +8,14 @@ const Index = ({ readNot, setNotificationDetails }) => {
       setIsAllRead(true)
       setNotificationDetails((prev)=> {
       return prev.map(item => {
-          return {...item, read:true}
+          return {...item, read:false}
       })
     })
     }else{
       setIsAllRead(false)
       setNotificationDetails((prev)=> {
       return prev.map(item => {
-          return {...item, read:false}
+          return {...item, read:true}
       })
     })
     }    
